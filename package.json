@@ -1,0 +1,132 @@
+{
+    "name": "snapify-code",
+    "displayName": "Snapify Code 📸",
+    "description": "Create beautiful, shareable code screenshots right inside VS Code. Like Carbon.now.sh but faster and offline!",
+    "version": "1.0.0",
+    "publisher": "sitharaj",
+    "author": {
+        "name": "Sitharaj Seenivasan",
+        "url": "https://www.linkedin.com/in/sitharaj88"
+    },
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sitharaj88/snapify-code.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sitharaj88/snapify-code/issues"
+    },
+    "homepage": "https://github.com/sitharaj88/snapify-code#readme",
+    "icon": "media/icon.png",
+    "galleryBanner": {
+        "color": "#1a1a2e",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other",
+        "Visualization"
+    ],
+    "keywords": [
+        "screenshot",
+        "code",
+        "carbon",
+        "codeshot",
+        "snapshot",
+        "share",
+        "image",
+        "export",
+        "beautiful",
+        "twitter",
+        "social",
+        "png"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codeshot.capture",
+                "title": "📸 CodeShot: Capture Selection"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "codeshot.capture",
+                    "when": "editorHasSelection",
+                    "group": "9_cutcopypaste"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "CodeShot",
+            "properties": {
+                "codeshot.theme": {
+                    "type": "string",
+                    "enum": [
+                        "dracula",
+                        "monokai",
+                        "nord",
+                        "synthwave",
+                        "github-dark",
+                        "ocean",
+                        "sunset",
+                        "aurora",
+                        "midnight"
+                    ],
+                    "enumDescriptions": [
+                        "🧛 Dracula - Purple to pink gradient",
+                        "🎨 Monokai - Pink to blue gradient",
+                        "❄️ Nord - Rainbow gradient",
+                        "🌆 Synthwave - Neon pink & cyan",
+                        "🐙 GitHub Dark - Deep navy",
+                        "🌊 Ocean - Turquoise gradient",
+                        "🌅 Sunset - Pink to yellow",
+                        "🌌 Aurora - Cyan to green",
+                        "🌙 Midnight - Deep purple"
+                    ],
+                    "default": "dracula",
+                    "description": "Color theme for snapshots"
+                },
+                "codeshot.windowStyle": {
+                    "type": "string",
+                    "enum": [
+                        "mac",
+                        "windows",
+                        "none"
+                    ],
+                    "default": "mac",
+                    "description": "Window chrome style"
+                },
+                "codeshot.showLineNumbers": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show line numbers in snapshot"
+                },
+                "codeshot.padding": {
+                    "type": "number",
+                    "default": 32,
+                    "description": "Padding around the code (pixels)"
+                },
+                "codeshot.watermark": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Optional watermark text (e.g., @yourhandle)"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "16.x",
+        "typescript": "^5.1.3"
+    }
+}
