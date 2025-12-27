@@ -2,7 +2,7 @@
     "name": "snapify-code",
     "displayName": "Snapify Code 📸",
     "description": "Create beautiful, shareable code screenshots right inside VS Code. Like Carbon.now.sh but faster and offline!",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "publisher": "sitharaj",
     "author": {
         "name": "Sitharaj Seenivasan",
